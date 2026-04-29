@@ -1,0 +1,8 @@
+#!/bin/bash
+timestamp=$(date +%Y%m%d_%H%M%S)
+
+mkdir -p logs_archive
+tar -czvf "logs_archive/logs_archive_${timestamp}.tar.gz" $1 --ignore-failed-read
+
+echo "$(date +"%Y-%m-%d %H:%M:%S") - Archive created: logs_archive_${timestamp}.tar.gz" >> archive.log
+
